@@ -1,0 +1,42 @@
+{
+  "name": "dogjun-cli",
+  "version": "1.0.0",
+  "description": "this is a dogjun-cli",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build:dev": "gulp",
+    "build:prod": "cross-env NODE_ENV=production gulp",
+    "build:config": "cross-env NODE_ENV=config gulp",
+    "start": "cross-env NODE_ENV=development supervisor ./build/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DogJun/dogjun-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DogJun/dogjun-cli/issues"
+  },
+  "homepage": "https://github.com/DogJun/dogjun-cli#readme",
+  "dependencies": {
+    "cross-env": "^5.1.4",
+    "koa": "^2.5.0",
+    "lodash": "^4.17.5",
+    "log4js": "^2.5.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.42",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-rollup": "^2.16.2",
+    "gulp-watch": "^5.0.0",
+    "rollup-plugin-replace": "^2.0.0"
+  }
+}
