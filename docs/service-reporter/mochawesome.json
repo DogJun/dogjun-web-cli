@@ -1,0 +1,136 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2018-03-18T16:13:58.242Z",
+    "end": "2018-03-18T16:13:58.324Z",
+    "duration": 82,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "b98fee8f-b992-4ef0-81c7-b9505ea95474",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "d56a9c1f-8aa6-4963-82c8-3cd25adf6d9e",
+        "title": "NodeUII自动化测试脚本",
+        "fullFile": "/Users/DogJun/Documents/github/dogjun-cli/tests/service/router.spec.js",
+        "file": "/tests/service/router.spec.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "ef92d7ce-1e6d-4e90-a110-8ee23b42ccf5",
+            "title": "API接口测试",
+            "fullFile": "/Users/DogJun/Documents/github/dogjun-cli/tests/service/router.spec.js",
+            "file": "/tests/service/router.spec.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "测试获取的数据",
+                "fullTitle": "NodeUII自动化测试脚本 API接口测试 测试获取的数据",
+                "timedOut": false,
+                "duration": 32,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "request()\n.get('/index/test')\n.set('Accept', 'appliaction/json')\n.expect('Content-Type', /json/)\n.expect(200)\n.end(function (err, response) {\n  if (response.body.data === 'hello test') {\n    done()\n  } else {\n    done(new Error('测试接口与预期不符合'))\n  }\n})",
+                "err": {},
+                "isRoot": false,
+                "uuid": "f1fa461b-27c5-485d-8271-e910fccd8a1f",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "f1fa461b-27c5-485d-8271-e910fccd8a1f"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 32,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          },
+          {
+            "uuid": "60382120-cc2e-4e1d-a2d7-cf4e4ed254c3",
+            "title": "NodeUII容错测试",
+            "fullFile": "/Users/DogJun/Documents/github/dogjun-cli/tests/service/router.spec.js",
+            "file": "/tests/service/router.spec.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "测试404",
+                "fullTitle": "NodeUII自动化测试脚本 NodeUII容错测试 测试404",
+                "timedOut": false,
+                "duration": 14,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "request()\n.get('/notfound')\n.expect(404, done)",
+                "err": {},
+                "isRoot": false,
+                "uuid": "8409a534-2053-448f-9a7a-4b8504f6fdfb",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "8409a534-2053-448f-9a7a-4b8504f6fdfb"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 14,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2018
+}
