@@ -10,19 +10,24 @@ gulp.task('builddev', () => {
     gulp.src('./src/nodeuii/**/*.js')
       .pipe(babel({
         babelrc: false, // 不让外部的babelrc影响到内部
-        "plugins": ["transform-es2015-modules-commonjs"] // 只编译import
+        "plugins": [
+          "transform-es2015-modules-commonjs", // 只编译import
+          "@babel/plugin-proposal-decorators"
+        ]
       }))
-      .pipe(gulp.dest('./build'))
+      .pipe(gulp.dest('./dist'))
   })
 })
 
 // 生产环境
 gulp.task('buildprod', () => {
   gulp.src('./src/nodeuii/**/*.js')
-    .pipe(babel({
-      babelrc: false, // 不让外部的babelrc影响到内部
-      // ignore: ['./src/nodeuii/config/index.js'],
-      "plugins": ["transform-es2015-modules-commonjs"] // 只编译import
+  .pipe(babel({
+    babelrc: false, // 不让外部的babelrc影响到内部
+      "plugins": [
+        "transform-es2015-modules-commonjs", // 只编译import
+        "@babel/plugin-proposal-decorators"
+      ]
     }))
     .pipe(rollup({
       output:{
@@ -35,7 +40,7 @@ gulp.task('buildprod', () => {
         })
       ]
     }))
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./dist'))
 })
 
 

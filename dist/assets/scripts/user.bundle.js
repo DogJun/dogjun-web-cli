@@ -182,7 +182,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _widgets_footer_footer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../widgets/footer/footer.js */ \"./src/webapp/widgets/footer/footer.js\");\n\r\n_widgets_footer_footer_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init()\n\n//# sourceURL=webpack:///./src/webapp/views/user/user-index.entry.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _widgets_footer_footer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../widgets/footer/footer.js */ \"./src/webapp/widgets/footer/footer.js\");\n\n_widgets_footer_footer_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init()\n\n//# sourceURL=webpack:///./src/webapp/views/user/user-index.entry.js?");
 
 /***/ }),
 
@@ -194,7 +194,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wid
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n__webpack_require__.e(/*! import() */ 0).then(function() { var module = __webpack_require__(/*! ./footer.css */ \"./src/webapp/widgets/footer/footer.css\"); return typeof module === \"object\" && module && module.__esModule ? module : Object.assign({/* fake namespace object */}, typeof module === \"object\" && module, { \"default\": module }); })\r\n\r\nconst footer = {\r\n  init: () => {\r\n    console.log('footer init')\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (footer);\n\n//# sourceURL=webpack:///./src/webapp/widgets/footer/footer.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n__webpack_require__.e(/*! import() */ 0).then(function() { var module = __webpack_require__(/*! ./footer.css */ \"./src/webapp/widgets/footer/footer.css\"); return typeof module === \"object\" && module && module.__esModule ? module : Object.assign({/* fake namespace object */}, typeof module === \"object\" && module, { \"default\": module }); })\n\nconst footer = {\n  init: () => {\n    console.log('footer init')\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (footer);\n\n//# sourceURL=webpack:///./src/webapp/widgets/footer/footer.js?");
 
 /***/ })
 

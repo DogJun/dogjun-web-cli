@@ -182,7 +182,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _widgets_topbanner_topbanner_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../widgets/topbanner/topbanner.js */ \"./src/webapp/widgets/topbanner/topbanner.js\");\n\r\n_widgets_topbanner_topbanner_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init()\r\n\n\n//# sourceURL=webpack:///./src/webapp/views/hello/hello-index.entry.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _widgets_topbanner_topbanner_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../widgets/topbanner/topbanner.js */ \"./src/webapp/widgets/topbanner/topbanner.js\");\n\n_widgets_topbanner_topbanner_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init()\n\n\n//# sourceURL=webpack:///./src/webapp/views/hello/hello-index.entry.js?");
 
 /***/ }),
 
@@ -194,7 +194,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wid
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n__webpack_require__.e(/*! import() */ 1).then(function() { var module = __webpack_require__(/*! ./topbanner.css */ \"./src/webapp/widgets/topbanner/topbanner.css\"); return typeof module === \"object\" && module && module.__esModule ? module : Object.assign({/* fake namespace object */}, typeof module === \"object\" && module, { \"default\": module }); })\r\n\r\nconst topbanner = {\r\n  init: () => {\r\n    console.log('topbanner init')\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (topbanner);\n\n//# sourceURL=webpack:///./src/webapp/widgets/topbanner/topbanner.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n__webpack_require__.e(/*! import() */ 1).then(function() { var module = __webpack_require__(/*! ./topbanner.css */ \"./src/webapp/widgets/topbanner/topbanner.css\"); return typeof module === \"object\" && module && module.__esModule ? module : Object.assign({/* fake namespace object */}, typeof module === \"object\" && module, { \"default\": module }); })\n\nconst topbanner = {\n  init: () => {\n    console.log('topbanner init')\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (topbanner);\n\n//# sourceURL=webpack:///./src/webapp/widgets/topbanner/topbanner.js?");
 
 /***/ })
 

@@ -7,11 +7,11 @@
     "test": "tests"
   },
   "scripts": {
-    "server:dev": "gulp",
+    "server:dev": "cross-env NODE_ENV=development gulp",
     "server:prod": "cross-env NODE_ENV=production gulp",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
-    "start": "cross-env NODE_ENV=development supervisor ./build/app.js",
+    "start": "cross-env NODE_ENV=development supervisor ./dist/app.js",
     "docs": "jsdoc ./src/nodeuii/**/*.js -d docs/jsdocs",
     "service": "mocha ./tests/mochaRunner.js"
   },
@@ -38,6 +38,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.42",
+    "@babel/plugin-proposal-decorators": "^7.0.0-beta.42",
+    "awilix": "^3.0.6",
+    "awilix-koa": "^2.1.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",

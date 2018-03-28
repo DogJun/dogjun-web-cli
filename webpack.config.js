@@ -27,6 +27,10 @@ let configPlugins = [
   new CopyWebpackPlugin([{
     from: 'src/webapp/views/common',
     to: '../views/common'
+  }, {
+    from: 'src/webapp/widgets',
+    to: '../widgets',
+    ignore: ['*.css', '*.js']
   }]),
   new htmlAfterWebpackPlugin()
 ]

@@ -7,7 +7,7 @@
  * IndexModel类，获取数据
  * @class
  */
-export default class IndexModel {
+export default class UserService {
   /**
    * @constructor
    * @param {string} app koa2的上下文环境
@@ -19,10 +19,10 @@ export default class IndexModel {
    * @example
    * getData()
    */
-  getData () {
+  getData (id) {
     return new Promise ((resolve, reject) => {
       setTimeout(() => {
-        resolve('Hello IndexAction')
+        resolve(`Hello UserAction [${id}]`)
       }, 1000)
     })
   }

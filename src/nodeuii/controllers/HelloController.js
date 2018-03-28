@@ -1,0 +1,14 @@
+import {route, GET, POST, before} from 'awilix-koa'
+
+@route('/hello')
+export default class HelloController {
+  constructor ({helloService}) {
+    this.helloService = helloService
+  }
+  @route('/getUser')
+  @GET()
+  async getUser (ctx) {
+    const result = this.helloService.find()
+    ctx.body = await ctx.render('hello/pages/index', {data: result})
+  }
+}
