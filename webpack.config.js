@@ -2,23 +2,53 @@ const argv = require('yargs-parser')(process.argv.slice(2))
 const merge = require('webpack-merge')
 const glob = require('glob')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const htmlAfterWebpackPlugin = require('./config/htmlAfterWebpackPlugin.js')
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const {join} = require('path')
 const files = glob.sync('./src/webapp/views/**/*.entry.js')
 const _mergeConfig = require(`./config/webpack.${argv.mode}.js`)
-console.log('得到的参数:', argv.mode)
-console.log('entry:', files)
+// console.log('得到的参数:', argv.mode)
+// console.log('entry:', files)
 
-// 拼接多入口
+// 入口配置
 let _entry = {}
+// htmlWebpackPlugin需要的chunks数组
+let _templateArr = []
+// 插件配置
+let configPlugins = [
+  // new MiniCssExtractPlugin({
+  //   // Options similar to the same options in webpackOptions.output
+  //   // both options are optional
+  //   filename: "styles/[name].css"
+  //   // chunkFilename: "[id].css"
+  // })
+  new CopyWebpackPlugin([{
+    from: 'src/webapp/views/common',
+    to: '../views/common'
+  }]),
+  new htmlAfterWebpackPlugin()
+]
+// 生成入口配置和chunks数组
 for (let item of files) {
-  item.replace(/.+\/([a-zA-Z]+-[a-zA-Z]+)(\.entry\.js$)/g, (match, $1) => {
+  item.replace(/.+\/([a-zA-Z]+)-([a-zA-Z]+)(\.entry\.js$)/g, (match, $1) => {
     _entry[$1] = item
+    _templateArr.push($1)
   })
 }
-console.log(_entry)
+// console.log(_templateArr)
+// 遍历生成htmlWebpackPlugin
+_templateArr.forEach((item) => {
+  const htmlPlugin = new HtmlWebpackPlugin({  
+    filename: `../views/${item}/pages/index.html`,
+    template: `src/webapp/views/${item}/pages/index.html`,
+    inject: false,
+    chunks: [item]
+  })
+  configPlugins.unshift(htmlPlugin)
+})
+
 // 默认配置
 let defaultConfig = {
   entry: _entry,
@@ -45,31 +75,7 @@ let defaultConfig = {
       }
     ]
   },
-  plugins: [
-    // new MiniCssExtractPlugin({
-    //   // Options similar to the same options in webpackOptions.output
-    //   // both options are optional
-    //   filename: "styles/[name].css"
-    //   // chunkFilename: "[id].css"
-    // })
-    new CopyWebpackPlugin([{
-      from: 'src/webapp/views/common',
-      to: '../views/common'
-    }, {
-      from: 'src/webapp/widgets',
-      to: '../widgets'
-    }]),
-    new HtmlWebpackPlugin({  // Also generate a test.html
-      filename: '../views/hello/pages/index.html',
-      template: 'src/webapp/views/hello/pages/index.html',
-      inject: false
-    }),
-    new ExtractTextPlugin({
-      filename: 'styles/[name].css',
-      // 必须设置
-      allChunks: true
-    })
-  ]
+  plugins: configPlugins
 }
 
 module.exports = merge(defaultConfig, _mergeConfig)

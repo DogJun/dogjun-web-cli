@@ -32,7 +32,7 @@
 /******/
 /******/ 	// object to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		"hello-index": 0
+/******/ 		"user": 0
 /******/ 	};
 /******/
 /******/
@@ -169,32 +169,32 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/webapp/views/hello/hello-index.entry.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/webapp/views/user/user-index.entry.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/webapp/views/hello/hello-index.entry.js":
-/*!*****************************************************!*\
-  !*** ./src/webapp/views/hello/hello-index.entry.js ***!
-  \*****************************************************/
+/***/ "./src/webapp/views/user/user-index.entry.js":
+/*!***************************************************!*\
+  !*** ./src/webapp/views/user/user-index.entry.js ***!
+  \***************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _widgets_topbanner_topbanner_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../widgets/topbanner/topbanner.js */ \"./src/webapp/widgets/topbanner/topbanner.js\");\n\r\n_widgets_topbanner_topbanner_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init()\r\n\n\n//# sourceURL=webpack:///./src/webapp/views/hello/hello-index.entry.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _widgets_footer_footer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../widgets/footer/footer.js */ \"./src/webapp/widgets/footer/footer.js\");\n\r\n_widgets_footer_footer_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init()\n\n//# sourceURL=webpack:///./src/webapp/views/user/user-index.entry.js?");
 
 /***/ }),
 
-/***/ "./src/webapp/widgets/topbanner/topbanner.js":
-/*!***************************************************!*\
-  !*** ./src/webapp/widgets/topbanner/topbanner.js ***!
-  \***************************************************/
+/***/ "./src/webapp/widgets/footer/footer.js":
+/*!*********************************************!*\
+  !*** ./src/webapp/widgets/footer/footer.js ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n__webpack_require__.e(/*! import() */ 1).then(function() { var module = __webpack_require__(/*! ./topbanner.css */ \"./src/webapp/widgets/topbanner/topbanner.css\"); return typeof module === \"object\" && module && module.__esModule ? module : Object.assign({/* fake namespace object */}, typeof module === \"object\" && module, { \"default\": module }); })\r\n\r\nconst topbanner = {\r\n  init: () => {\r\n    console.log('topbanner init')\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (topbanner);\n\n//# sourceURL=webpack:///./src/webapp/widgets/topbanner/topbanner.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n__webpack_require__.e(/*! import() */ 0).then(function() { var module = __webpack_require__(/*! ./footer.css */ \"./src/webapp/widgets/footer/footer.css\"); return typeof module === \"object\" && module && module.__esModule ? module : Object.assign({/* fake namespace object */}, typeof module === \"object\" && module, { \"default\": module }); })\r\n\r\nconst footer = {\r\n  init: () => {\r\n    console.log('footer init')\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (footer);\n\n//# sourceURL=webpack:///./src/webapp/widgets/footer/footer.js?");
 
 /***/ })
 
