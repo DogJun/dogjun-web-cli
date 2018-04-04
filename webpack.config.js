@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const argv = require('yargs-parser')(process.argv.slice(2))
 const merge = require('webpack-merge')
 const glob = require('glob')
@@ -10,6 +11,7 @@ const files = glob.sync('./src/webapp/views/**/*.entry.js')
 const _mode = argv.mode
 const _modeflag = _mode === 'production' ? true : false
 const _mergeConfig = require(`./config/webpack.${argv.mode}.js`)
+// const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
 // console.log('得到的参数:', argv.mode)
 // console.log('entry:', files)
 
@@ -87,7 +89,8 @@ let defaultConfig = {
   },
   plugins: [
     ..._plugins,
-    new htmlAfterWebpackPlugin()
+    new htmlAfterWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
     modules: [
