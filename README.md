@@ -1,3 +1,4 @@
+```
 .
 ├── README.md
 ├── config // webpack配置
@@ -40,5 +41,4 @@
 │   └── service
 │       └── router.spec.js
 └── webpack.config.js
-
-26 directories, 58 files
+```
