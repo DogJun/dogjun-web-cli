@@ -90,7 +90,7 @@ let defaultConfig = {
   plugins: [
     ..._plugins,
     new htmlAfterWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    // new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
     modules: [

@@ -5,27 +5,10 @@ import errorHandler from './middlewares/errorHandler'
 import co from 'co'
 import render from 'koa-swig'
 import serve from 'koa-static'
-import webpack from 'webpack'
-import webpackDevMiddleware from 'koa-webpack-dev-middleware'
-import webpackHotMiddleware from 'koa-webpack-hot-middleware'
-// const webpackConfig = require('../webpack.config')
 const { asClass, asValue, createContainer, Lifetime} = require('awilix')
 const { loadControllers, scopePerRequest } = require('awilix-koa')
 
 const app = new Koa()
-const compiler = webpack(webpackConfig)
-// app.use(webpackDevMiddleware(compiler, {
-//   noInfo: true,
-//   watchOptions: {
-//     ignored: /node_modules/,
-//   },
-//   reload: true,
-//   publicPath: config.viewDir,
-//   stats: {
-//     colors: true
-//   }
-// }))
-// app.use(webpackHotMiddleware(compiler))
 // 记录错误日志
 log4js.configure({
   appenders: { cheese: { type: 'file', filename: './logs/dogjun.log' } },

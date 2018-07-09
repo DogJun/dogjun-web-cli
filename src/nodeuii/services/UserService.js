@@ -22,7 +22,7 @@ export default class UserService {
   getData (id) {
     return new Promise ((resolve, reject) => {
       setTimeout(() => {
-        resolve(`Hello UserAction [${id}]`)
+        resolve(`获取路由参数id：${id}`)
       }, 1000)
     })
   }

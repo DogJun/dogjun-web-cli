@@ -5,7 +5,7 @@ export default class HelloController {
   constructor ({helloService}) {
     this.helloService = helloService
   }
-  @route('/getUser')
+  @route('/')
   @GET()
   async getUser (ctx) {
     const result = this.helloService.find()
