@@ -2,7 +2,7 @@ import('./topbanner.css')
 
 const topbanner = {
   init: () => {
-    console.log('topbanner init')
+    console.log('topbanner init1')
   }
 }
 

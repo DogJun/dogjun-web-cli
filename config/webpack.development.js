@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require("path")
 
 module.exports = {
+  mode: 'development',
   plugins: [
     new CopyWebpackPlugin([{
       from: path.join(__dirname, '../' , '/src/webapp/views/common/'),

@@ -7,7 +7,6 @@ import render from 'koa-swig'
 import serve from 'koa-static'
 const { asClass, asValue, createContainer, Lifetime} = require('awilix')
 const { loadControllers, scopePerRequest } = require('awilix-koa')
-
 const app = new Koa()
 // 记录错误日志
 log4js.configure({
