@@ -1,5 +1,5 @@
 import Koa from 'koa'
-import config from './config/index'
+import configure from './config/index'
 import log4js from 'log4js'
 import errorHandler from './middlewares/errorHandler'
 import co from 'co'
@@ -29,7 +29,7 @@ container.loadModules([`${__dirname}/services/*.js`], {
 })
 // 注册所有的路由
 app.use(loadControllers('controllers/*.js', {cwd: __dirname}))
-
+const config = configure(app)
 // 模板
 app.context.render = co.wrap(render({
   // ...your setting 

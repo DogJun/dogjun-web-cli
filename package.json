@@ -57,6 +57,7 @@
     "html-minifier": "^3.5.13",
     "html-webpack-plugin": "^3.0.7",
     "jsdoc": "^3.5.5",
+    "koa-webpack-middleware": "^1.0.7",
     "mocha": "^5.0.4",
     "mochawesome": "^3.0.2",
     "postcss-cssnext": "^3.1.0",

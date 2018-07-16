@@ -97,7 +97,9 @@ let defaultConfig = {
       resolve(__dirname, 'node_modules'), // 使用绝对路径指定 node_modules，不做过多查询
     ],
     // 删除不必要的后缀自动补全，少了文件后缀的自动匹配，即减少了文件路径查询的工作
-    extensions: [".js", ".css"]
+    extensions: [".js", ".css"],
+    // 避免新增默认文件，编码时使用详细的文件路径，代码会更容易解读，也有益于提高构建速度
+    mainFiles: ['index']
   }
 }
 
