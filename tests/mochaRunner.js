@@ -1,7 +1,7 @@
 const Mocha = require('mocha')
 
 const mocha = new Mocha({
-  reporter: 'mochawesome',
+  reporter: 'mochawesome', // 生成报表
   reporterOptions: {
     reportDir: './docs/service-reporter'
   }

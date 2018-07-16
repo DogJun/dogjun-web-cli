@@ -22,7 +22,7 @@ const container = createContainer()
 app.use(scopePerRequest(container))
 // 装载所有的 models 并将 services 代码注入到 controllers
 container.loadModules([`${__dirname}/services/*.js`], {
-  formatName: 'camelCase',
+  formatName: 'camelCase', // 驼峰转换
   resolverOptions: {
     lifetime: Lifetime.SCOPED
   }

@@ -19,6 +19,8 @@ const assetsHelp = (data)=>{
         js
     }
 }
+// 官网写法错误，webpack4写法更改
+// 详情见issues https://github.com/jantimon/html-webpack-plugin/issues/879
 class htmlAfterWebpackPlugin {
     apply(compiler) {
         //html-webpack-plugin-before-html-processing

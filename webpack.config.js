@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const argv = require('yargs-parser')(process.argv.slice(2))
+const argv = require('yargs-parser')(process.argv.slice(2)) // 获取命令行参数
 const merge = require('webpack-merge')
 const glob = require('glob')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
