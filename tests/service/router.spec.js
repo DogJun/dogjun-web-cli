@@ -1,5 +1,5 @@
 const superagent = require('supertest')
-const app = require('../../build/app.js')
+const app = require('../../dist/app.js')
 
 function request () {
   return superagent(app.listen())

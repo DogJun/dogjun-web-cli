@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * @fileOverview 实现Index数据模型
  * @author DogJun

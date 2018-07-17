@@ -1,4 +1,4 @@
-import {route, GET, POST, before} from 'awilix-koa'
+import {route, GET} from 'awilix-koa'
 
 @route('/hello')
 export default class HelloController {

@@ -5,7 +5,7 @@ import errorHandler from './middlewares/errorHandler'
 import co from 'co'
 import render from 'koa-swig'
 import serve from 'koa-static'
-const { asClass, asValue, createContainer, Lifetime} = require('awilix')
+const { createContainer, Lifetime} = require('awilix')
 const { loadControllers, scopePerRequest } = require('awilix-koa')
 const app = new Koa()
 // 记录错误日志
@@ -44,7 +44,7 @@ app.context.render = co.wrap(render({
 app.use(serve(config.staticDir))
 
 app.listen(config.port, () => {
-  console.log(`Server is running at port ${config.port}`)
+  console.log(`Server is running at port ${config.port}`) // eslint-disable-line
 })
 
 // 方便测试用

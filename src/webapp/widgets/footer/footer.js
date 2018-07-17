@@ -2,7 +2,7 @@ import('./footer.css')
 
 const footer = {
   init: () => {
-    console.log('footer init')
+    // console.log('footer init')
   }
 }
 

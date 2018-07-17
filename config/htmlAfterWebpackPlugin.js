@@ -28,12 +28,12 @@ class htmlAfterWebpackPlugin {
             compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tap(pluginName,htmlPluginData=>{
                 let _html = htmlPluginData.html;
                 const result = assetsHelp(htmlPluginData.assets);
-                console.log('css', result.css)
-                console.log('js', result.js)
-                console.log('_html', _html)
+                // console.log('css', result.css)
+                // console.log('js', result.js)
+                // console.log('_html', _html)
                 _html = _html.replace("<!--injectcss-->",result.css);
                 _html = _html.replace("<!--injectjs-->",result.js);
-                console.log('得到的值',_html);
+                // console.log('得到的值',_html);
                 htmlPluginData.html = _html;
             })
         });

@@ -1,6 +1,7 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require("path")
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
@@ -20,6 +21,7 @@ module.exports = {
       filename: 'styles/[name].css',
       // 必须设置
       allChunks: true
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }

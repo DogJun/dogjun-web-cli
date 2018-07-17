@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 const argv = require('yargs-parser')(process.argv.slice(2)) // 获取命令行参数
 const merge = require('webpack-merge')
 const glob = require('glob')
@@ -8,10 +7,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const htmlAfterWebpackPlugin = require('./config/htmlAfterWebpackPlugin.js')
 const { join,resolve } = require('path')
 const files = glob.sync('./src/webapp/views/**/*.entry.js')
-const _mode = argv.mode
+const _mode = argv.mode || 'development'
 const _modeflag = _mode === 'production' ? true : false
-const _mergeConfig = require(`./config/webpack.${argv.mode}.js`)
-// const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
+const _mergeConfig = require(`./config/webpack.${_mode}.js`)
+// const _mergeConfig = require(`./config/webpack.development.js`)
+const hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true'
 // console.log('得到的参数:', argv.mode)
 // console.log('entry:', files)
 
@@ -23,7 +23,7 @@ let _plugins = []
 for (let item of files) {
   if (/.+\/([a-zA-Z]+-[a-zA-Z]+)(\.entry\.js$)/g.test(item) === true) {
     const entrykey = RegExp.$1
-    _entry[entrykey] = item
+    _entry[entrykey] = _modeflag ? item : [hotMiddlewareScript, item]
     const [dist, template] = entrykey.split('-')
     _plugins.push(new HtmlWebpackPlugin({
       filename: `../views/${dist}/pages/${template}.html`,
@@ -37,7 +37,7 @@ for (let item of files) {
     }))
   }
 }
-
+console.log('entry', _entry)
 // 默认配置
 let defaultConfig = {
   entry: _entry,
@@ -47,6 +47,12 @@ let defaultConfig = {
     filename: 'scripts/[name].bundle.js'
   },
   module: {
+    // 编译太长记得把happyWebpack引入进来 Wenbpack5将取代这个插件
+    /*{
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: 'happypack/loader?id=babel',
+    }, */
     rules: [{
       test: /\.(png|jpg|gif|eot|woff|woff2|ttf|svg|otf)$/,
       use: [{
@@ -89,8 +95,7 @@ let defaultConfig = {
   },
   plugins: [
     ..._plugins,
-    new htmlAfterWebpackPlugin(),
-    // new webpack.HotModuleReplacementPlugin()
+    new htmlAfterWebpackPlugin()
   ],
   resolve: {
     modules: [
