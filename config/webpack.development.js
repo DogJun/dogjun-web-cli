@@ -22,6 +22,7 @@ module.exports = {
       // 必须设置
       allChunks: true
     }),
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
 }

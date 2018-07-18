@@ -11,7 +11,7 @@ const _mode = argv.mode || 'development'
 const _modeflag = _mode === 'production' ? true : false
 const _mergeConfig = require(`./config/webpack.${_mode}.js`)
 // const _mergeConfig = require(`./config/webpack.development.js`)
-const hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true'
+const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&reload=true'
 // console.log('得到的参数:', argv.mode)
 // console.log('entry:', files)
 
